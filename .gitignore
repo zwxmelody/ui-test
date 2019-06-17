@@ -5,3 +5,4 @@ screenShot/*
 testResult/*
 *.png
 *.cfg
+*sendEmail*
