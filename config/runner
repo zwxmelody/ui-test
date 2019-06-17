@@ -1,0 +1,16 @@
+#
+#runType=0 使用真机/模拟器运行 1：单文件调试
+#phoneType 配置文件device中的section值，运行的机型
+#
+
+[mathes]
+runType = 0
+phoneType = iPhone8_12.2
+
+[english]
+runType = 0
+phoneType = iPhone7_11.3
+
+[chinese]
+runType = 0
+phoneType = iPhone8_12.2

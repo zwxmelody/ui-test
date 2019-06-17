@@ -1,0 +1,31 @@
+[iPhone6_11.0_real]
+bundleId=com.XueErSi.XCL
+platformName=iOS
+platformVersion=11.0.1
+deviceName=培优信息的 iPhone
+udid=abc850a873206f85d0910aa55031a4b129b20a01
+remoteHost=http://127.0.0.1:4723/wd/hub
+
+[iPhone6s_12.3_real]
+bundleId=com.XueErSi.XCL
+platformName=iOS
+platformVersion=12.3
+deviceName=张伟霞的 iPhone
+udid=61468a8e30b99c66ed0bad6044ea0b08d0fdb62d
+remoteHost=http://127.0.0.1:4723/wd/hub
+
+
+[iPhone8_12.2]
+bundleId=com.XueErSi.XCL
+platformName=iOS
+platformVersion=12.2
+deviceName=iPhone 8
+remoteHost=http://127.0.0.1:4723/wd/hub
+
+
+[iPhone7_11.3]
+bundleId=com.XueErSi.XCL
+platformName=iOS
+platformVersion=11.3
+deviceName=iPhone 7
+remoteHost=http://127.0.0.1:4723/wd/hub

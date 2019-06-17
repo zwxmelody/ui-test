@@ -1,0 +1,14 @@
+[test_interactive_1]
+coordinate1 = 266,278,270,227
+coordinate2 = 312,281,306,228
+
+[test_interactive_2]
+coordinate1 = 282,270,137,347
+coordinate2 = 323,272,83,297
+coordinate3 = 282,310,85,348
+coordinate4 = 321,312,190,294
+coordinate5 = 281,349,137,296
+coordinate6 = 321,348,137,401
+coordinate7 = 281,388,83,399
+coordinate8 = 321,387,190,347
+coordinate9 = 282,426,190,399
