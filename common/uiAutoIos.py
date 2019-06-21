@@ -31,6 +31,7 @@ class UiAuto:
                     self.desired_caps[option] = config.get(section,option)
         except:
             print('no such section or option error')
+        print(self.desired_caps)
 
     def initDriver(self):
         self._driver = webdriver.Remote(self.remoteHost, self.desired_caps)
@@ -387,9 +388,16 @@ class UiAuto:
         except:
             pass
 
+        # 点击登录（有时候不能自动登录，处理完神策弹窗之后需要点击登录按钮）
+        try:
+            self.waitForElement('登录', 5)
+            self.clickElement('登录')
+        except:
+            pass
+
         # 进入全部任务页面
         try:
-            self.waitForElement('全部任务', 5)
+            self.waitForElement('全部任务', 8)
             self.clickElement('全部任务')
         except:
             raise Exception("没有找到全部任务按钮！")
@@ -462,4 +470,4 @@ class UiAuto:
     """
     def touchAction(self,x1,y1,x2,y2):
         TouchAction(self._driver).press(x=x1,y=y1).wait(700)\
-        .move_to(x=x2,y=y2).wait(700).release().perform()
+        .move_to(x=x2,y=y2).wait(800).release().perform()

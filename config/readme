@@ -1,0 +1,9 @@
+####单文件调试####
+1、修改配置文件runner，对应的runType=1
+2、修改配置文件runner，对应的phoneType设置为要运行的机型
+3、修改commonLib文件，getRuntimeConfig函数file = superPATH('config/runner')
+
+####通过testsuite执行####
+1、修改配置文件runner，对应的runType=1
+2、修改配置文件runner，对应的phoneType设置为要运行的机型
+3、修改commonLib文件，getRuntimeConfig函数file = parentPATH('config/runner')

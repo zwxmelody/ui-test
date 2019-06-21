@@ -56,6 +56,7 @@ class testBabyGame(unittest.TestCase):
         self.UIA.waitForElement('lesson1', 5)
         self.UIA.clickElement('lesson1')
         self.UIA.swipeUp()
+        self.UIA.waitForElement('数学幼儿游戏', 5)
         self.UIA.clickElement('数学幼儿游戏')
 
         # 点击开始，第一次关卡答题
