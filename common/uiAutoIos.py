@@ -41,6 +41,12 @@ class UiAuto:
             self._driver.quit()
 
     """
+    #############################################################
+    #######################下面是常用操作/手势封装###################
+    #############################################################
+    """
+
+    """
     给定控件的xpath, id 或者name来查找控件
 
     Args:
@@ -365,6 +371,29 @@ class UiAuto:
         self._driver.execute_script('mobile: dragFromToForDuration',{'duration': period, 'fromX': x1, 'fromY': y1, 'toX': x2, 'toY': y2,})
 
     """
+        截屏，传入截图保存的路径和图片名字
+        """
+
+    def saveScreen(self, path, name):
+
+        imgName = path + '/' + name + '_' + str(round(time.time() * 1000)) + '.png'
+        self._driver.get_screenshot_as_file(imgName)
+        return
+
+    """
+    从位置(x1,y1)拖动到位置(x2,y2)
+    """
+
+    def touchAction(self, x1, y1, x2, y2):
+        TouchAction(self._driver).press(x=x1, y=y1).wait(700) \
+            .move_to(x=x2, y=y2).wait(800).release().perform()
+
+    """
+    #########################################################
+    ###################下面是公共业务场景封装####################
+    #########################################################
+    """
+    """
     开始答题前环境准备：从启动APP处理各种可能弹窗到点击全部任务进入全部任务页面
     """
 
@@ -456,18 +485,19 @@ class UiAuto:
             print('没有找到关闭按钮！')
             self.saveScreen(path, 'noCloseButton')
 
-    """
-    截屏，传入截图保存的路径和图片名字
-    """
-    def saveScreen(self, path, name):
-
-        imgName = path + '/' + name + '_' + str(round(time.time()*1000)) + '.png'
-        self._driver.get_screenshot_as_file(imgName)
-        return
 
     """
-    从位置(x1,y1)拖动到位置(x2,y2)
+    语文lesson1的公共操作
     """
-    def touchAction(self,x1,y1,x2,y2):
-        TouchAction(self._driver).press(x=x1,y=y1).wait(700)\
-        .move_to(x=x2,y=y2).wait(800).release().perform()
+    def gotoChineseLesson1(self):
+        # 进入全部任务页后默认在数学页，切换到语文页
+        self.waitForElement('语文', 5)
+        self.clickElement('语文')
+
+        # 收起lesson2，显示lesson1
+        self.waitForElement('lesson2', 5)
+        self.clickElement('lesson2')
+
+        # 点击lesson1，展开任务项
+        self.waitForElement('lesson1', 5)
+        self.clickElement('lesson1')

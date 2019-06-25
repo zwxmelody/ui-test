@@ -7,7 +7,7 @@ import sys
 sys.path.append('../')
 from common.uiAutoIos import *
 sys.path.append('../')
-from common.sendEmail import *
+#from common.sendEmail import *
 
 # 运行报告的路径和名称
 result = parentPATH('testResult/testReport.html')
